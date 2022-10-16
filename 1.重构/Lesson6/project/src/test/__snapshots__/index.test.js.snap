@@ -1,0 +1,23 @@
+// Vitest Snapshot v1
+
+exports[`happy path > test HTML 1`] = `
+"<h1>Statement for BigCo</h1>
+<table>
+<tr><th>player</th><th>amount</th><th>audience</th></tr><tr><td>Hamlet</td><td>$650.00</td><td>55 seats</td></tr></td>
+<tr><td>As You like It</td><td>$490.00</td><td>35 seats</td></tr></td>
+<tr><td>Othello</td><td>$500.00</td><td>40 seats</td></tr></td>
+</table> 
+<p>Amount owed is $1,640.00</p>
+<p>You earned 47 credits</p>
+"
+`;
+
+exports[`happy path > test text 1`] = `
+"Statement for BigCo
+ Hamlet:$650.00(55 seats)
+ As You like It:$490.00(35 seats)
+ Othello:$500.00(40 seats)
+Amount owed is $1,640.00
+You earned 47 credits
+"
+`;
