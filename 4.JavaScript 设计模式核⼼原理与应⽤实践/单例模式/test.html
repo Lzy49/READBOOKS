@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button id="show-bt">show</button>
+    <button id="hide-bt">hide</button>
+    <button id="button">button</button>
+    <script>
+        class Modal {
+            constructor() {
+                const modal = document.createElement('div')
+                modal.style.height = '500px'
+                modal.style.width = '500px'
+                modal.style.background = 'orange'
+                document.body.appendChild(modal)
+                this.modal = modal;
+            }
+            show() {
+                this.modal.style.display = 'block'
+                console.log('show Model')
+            }
+            hide() {
+                this.modal.style.display = 'none'
+                console.log('hide Model')
+            }
+            static getInstance() {
+                if (!this.instance) {
+                    this.instance = new Modal();
+                }
+                return this.instance
+            }
+        }
+        document.querySelector('#show-bt').addEventListener('click', () => {
+            const m = Modal.getInstance();
+            m.show()
+        })
+        document.querySelector('#hide-bt').addEventListener('click', () => {
+            const m = Modal.getInstance();
+            m.hide()
+        })
+        class Button {
+            constructor(dom) {
+                this._dom = dom
+            }
+            click() {
+                console.log('click')
+            }
+        }
+        class Decorator {
+            constructor(button) {
+                this._button = button
+            }
+            click() {
+                this._button._dom.setAttribute("disabled", true)
+            }
+        }
+        const button = document.getElementById('button');
+        const bt = new Decorator(new Button(button))
+        button.addEventListener('click', () => {
+            bt.click()
+        })
+    </script>
+</body>
+
+</html>
