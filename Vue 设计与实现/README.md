@@ -73,4 +73,13 @@
 ## 什么是良好的ts 支持
 1. 框架由ts编写,不一定是好的ts支持.
 # 第三章 Vue.js 3 的设计思路
-
+Vue.js 3 的设计思路、工作机制及其重要的组成部分
+1. vue 的dom 是声明式
+2. 对象和生命的区别在于 对象更灵活
+.vue -> dom 
+1. 编译器 : .vue 中 template -> render 
+  - 编译器 如何 解析的 template : tag 匹配
+2. 执行 render 函数
+  - 返回 render
+3. 渲染器 : render 的运行结果 -> DOM 
+  - 解析 tag -> 使用 DOM 处理 .
